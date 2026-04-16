@@ -14,6 +14,12 @@ An interactive web-based quiz management system designed for efficient academic 
 * **Database:** MySQL / SQL
 * **Tools:** Git, GitHub, ByetHost
 
+## 📸 Screenshots
+### System Interface
+![Login Page](image.png)
+![Dashboard](image%20(1).png)
+![Quiz View](image%20(2).png)
+
 ## 👥 Contributors (Group 4)
 * **Keithrine Rose Soriano** - Project Lead / Developer
 * **Megan Maningas**
