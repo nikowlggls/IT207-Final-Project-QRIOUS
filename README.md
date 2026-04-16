@@ -14,26 +14,19 @@ An interactive web-based quiz management system designed for efficient academic 
 * **Database:** MySQL / SQL
 * **Tools:** Git, GitHub, ByetHost
 
-## 📸 System Walkthrough (Screenshots)
+## 📸 System Screenshots
 
-### 🔑 Main Access
-*The entry point of the system featuring the soft-pink glass-vibe aesthetic.*
-![Landing Page](image.png)
+### 🛡️ Admin Dashboard
+*Management interface for system administrators.*
+![Admin Dashboard](admindash.jpg)
 
-### 🛡️ Admin Portal
-*Managing the system and creating academic content.*
-![Admin Dashboard](image%20(1).png)
-![Admin Create Quiz](image%20(2).png)
+### 🎓 Instructor Dashboard
+*Interface for creating and managing quiz content.*
+![Instructor Dashboard](insdash.jpg)
 
-### 🎓 Instructor Interface
-*Tools for instructors to manage their respective classes.*
-![Instructor Dashboard](image%20(3).png)
-![Instructor Create Quiz](image%20(4).png)
-
-### ✍️ Student Experience
-*The participant's view for taking assessments and viewing scores.*
-![Student Dashboard](image%20(5).png)
-![Take Quiz](image%20(6).png)
+### ✍️ Student Dashboard
+*The portal for participants to access their assessments.*
+![Student Dashboard](student%20dashboard.jpg)
 
 ## 👥 Contributors (Group 4)
 * **Keithrine Rose Soriano** - Project Lead / Developer
