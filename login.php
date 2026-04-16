@@ -4,6 +4,7 @@ require_once 'dbconnect.php';
 
 $error_msg = "";
 
+// Validate user input
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysqli_real_escape_string($conn, trim($_POST['username']));
     $password = mysqli_real_escape_string($conn, trim($_POST['password']));
