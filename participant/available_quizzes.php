@@ -5,11 +5,12 @@ date_default_timezone_set('Asia/Manila');
 
 require_once '../dbconnect.php'; 
 
+// Check if user is logged in and has the correct role
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Participant') {
     header('Location: ../login.php');
     exit;
 }
-
+// Initialize user identity variables
 $user_id = $_SESSION['id'] ?? $_SESSION['user_id'];
 $student_name = $_SESSION['fullname'] ?? ''; 
 
