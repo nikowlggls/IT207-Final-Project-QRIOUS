@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn_proceed'])) {
     $title = mysqli_real_escape_string($conn, trim($_POST['quiz_title']));
     $category = mysqli_real_escape_string($conn, $_POST['category']);
     $time_limit = intval($_POST['time_limit']); 
-    
+
+    // Get question counts for each type
     $mc = isset($_POST['mc_count']) ? intval($_POST['mc_count']) : 0;
     $tf = isset($_POST['tf_count']) ? intval($_POST['tf_count']) : 0;
     $sa = isset($_POST['sa_count']) ? intval($_POST['sa_count']) : 0;
@@ -34,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn_proceed'])) {
     } elseif (empty($title)) {
         $error = "Please enter a quiz title!";
     } else {
+        // Insert quiz header/config into the database
         $sql = "INSERT INTO quizzes (
                     quiz_title, 
                     category, 
