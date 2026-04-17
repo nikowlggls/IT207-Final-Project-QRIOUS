@@ -12,16 +12,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $role = "Participant";
 
+    // Ensures that the username is unique before proceeding with registration.
     $checkUser = "SELECT * FROM users WHERE username='$username'";
     $runCheck = mysqli_query($conn, $checkUser);
 
     if (mysqli_num_rows($runCheck) > 0) {
         $error_msg = "⚠ USERNAME ALREADY TAKEN!";
     } else {
+        // Prepare the SQL query to insert the new user record
         $sql = "INSERT INTO users (fullname, username, password, section, role) 
                 VALUES ('$fullname', '$username', '$password', '$section', '$role')";
         
         if (mysqli_query($conn, $sql)) {
+            // Auto-login after successful registration by setting session variables
             $new_user_id = mysqli_insert_id($conn);
             $_SESSION['user_id']  = $new_user_id;
             $_SESSION['username'] = $username;
@@ -29,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['fullname'] = $fullname;
             $_SESSION['section']  = $section;
 
+            // Redirect to the newly created participant's dashboard
             header("Location: participant/participant_dashboard.php");
             exit();
         } else {
