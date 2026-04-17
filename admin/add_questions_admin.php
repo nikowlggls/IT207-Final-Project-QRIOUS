@@ -10,6 +10,7 @@ if (!isset($_SESSION['role']) || strtolower($_SESSION['role']) !== 'admin') {
     exit;
 }
 
+// Fetch Quiz ID from GET request
 $quiz_id = isset($_GET['quiz_id']) ? intval($_GET['quiz_id']) : 0;
 if ($quiz_id == 0) {
     header('Location: manage_quizzes.php');
@@ -83,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save_questions'])) {
     }
 }
 
+// Calculate the number of input blocks to display
 $mc_count = intval($quiz['mc_count'] ?? 0);
 $tf_count = intval($quiz['tf_count'] ?? 0);
 $sa_count = intval($quiz['sa_count'] ?? 0);
