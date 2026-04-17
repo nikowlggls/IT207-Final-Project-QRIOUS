@@ -10,6 +10,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Instructor') {
     exit;
 }
 
+// Fetch Quiz ID from URL and validate
 $quiz_id = isset($_GET['quiz_id']) ? intval($_GET['quiz_id']) : 0;
 
 if ($quiz_id == 0) {
@@ -17,6 +18,7 @@ if ($quiz_id == 0) {
     exit;
 }
 
+// Get specific quiz details to display title and question counts
 $quiz_res = $conn->query("SELECT * FROM quizzes WHERE id = $quiz_id");
 $quiz = $quiz_res->fetch_assoc();
 
@@ -62,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save_questions'])) {
     }
 }
 
+// Dynamic counters based on the quiz setup
 $userName = $_SESSION['fullname'] ?? $_SESSION['username'] ?? 'Instructor';
 $mc_count = intval($quiz['mc_count'] ?? 0);
 $tf_count = intval($quiz['tf_count'] ?? 0);
