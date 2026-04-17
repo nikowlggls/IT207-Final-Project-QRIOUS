@@ -6,10 +6,11 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'Participant') {
     header('Location: ../login.php');
     exit;
 }
-
+// User identification from session data
 $user_id = $_SESSION['user_id'];
 $userName = $_SESSION['fullname'] ?? $_SESSION['username'] ?? 'Participant';
 
+// Calculates total quizzes taken and sum of scores for the scoreboard.
 $stats_query = $conn->prepare("SELECT COUNT(*) as total_taken, SUM(score) as total_points FROM quiz_attempts WHERE user_id = ?");
 $stats_query->bind_param("i", $user_id);
 $stats_query->execute();
